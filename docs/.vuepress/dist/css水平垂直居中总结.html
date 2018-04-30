@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>水平居中</title>
+    <meta name="description" content="">
+    
+    
+    <link rel="preload" href="/assets/css/1.styles.7347d376.css" as="style"><link rel="preload" href="/assets/js/app.85d8a0bf.js" as="script"><link rel="preload" href="/assets/js/0.5a91ab3e.js" as="script">
+    <link rel="stylesheet" href="/assets/css/1.styles.7347d376.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div><a href="/" class="home-link router-link-active"></a><div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""><!----></div><!----></div></header><div class="sidebar-mask"></div><div class="sidebar"><!----><!----></div><div class="page"><div class="content"><h1 id="水平居中"><a href="#水平居中" aria-hidden="true" class="header-anchor">#</a> 水平居中</h1><ol><li>定宽块级元素，左右margin设置为auto</li></ol><pre class="language-text"><code>// html
+&lt;div class=&quot;box&quot;&gt;&lt;/div&gt;
+
+// css
+.box {
+  height: 300px;
+  background-color: green;
+  /* 关键代码 */
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+</code></pre><p>demo: <a href="https://codepen.io/chwech/pen/ergbEm" target="_blank" rel="noopener noreferrer">定宽块级元素水平居中</a>
+2. 内联元素，父元素设置text-align: center</p><pre class="language-text"><code>// html
+&lt;div class=&quot;parent&quot;&gt;
+  &lt;span class=&quot;child&quot;&gt;文字水平居中&lt;/span&gt;
+&lt;/div&gt;
+
+// css
+.parent {
+  text-align: center;
+}
+</code></pre><p>demo: <a href="https://codepen.io/chwech/pen/yjgGvB" target="_blank" rel="noopener noreferrer">内联元素水平居中</a></p><h1 id="水平垂直居中"><a href="#水平垂直居中" aria-hidden="true" class="header-anchor">#</a> 水平垂直居中</h1><ol><li>绝对定位元素水平垂直居中</li></ol><p>有三种方法可实现绝对定位元素水平垂直居中，第一种方法：</p><pre class="language-text"><code>// html
+&lt;div class=&quot;absolute&quot;&gt;&lt;/div&gt;
+
+// css
+.absolute {
+  width: 300px;
+  height: 300px;
+  background-color: green;
+  
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* 位置调整，调整成宽高的一半 */
+  margin-left: -150px;
+  margin-top: -150px
+}
+</code></pre><p>demo: <a href="https://codepen.io/chwech/pen/rvjENK" target="_blank" rel="noopener noreferrer">绝对定位元素水平垂直居中(一)</a><br>
+此方法兼容性良好，但是缺点是需要知道绝对定位元素的宽度和高度。
+由于需要知道元素宽度和高度，所以有了以下改进的方法。利用css3变换位移。</p><pre class="language-text"><code>// html
+&lt;div class=&quot;absolute&quot;&gt;要居中的div&lt;/div&gt; 
+
+// css
+.absolute {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* translate百分比值是相对于自身宽高计算 */
+  transform: translate(-50%, -50%);
+}
+</code></pre><p>demo: <a href="https://codepen.io/chwech/pen/ELZBoJ" target="_blank" rel="noopener noreferrer">绝对定位元素水平垂直居中(二)</a><br>
+此方法不需要知道元素宽度和高度，但是由于使用了css3 transform，兼容为ie9(-ms-)以上浏览器。还有一种方法，弥补了以上两种方法的缺点，不需要知道元素的宽高，兼容ie8以上浏览器。</p><pre class="language-text"><code>// html
+&lt;img class=&quot;absolute&quot; src=&quot;https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1315688446,1836897379&amp;fm=27&amp;gp=0.jpg&quot; alt=&quot;&quot;&gt;
+
+// css
+.absolute {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+</code></pre><p>demo: <a href="https://codepen.io/chwech/pen/bMgXZJ" target="_blank" rel="noopener noreferrer">绝对定位元素水平垂直居中(三)</a><br>
+如果绝对定位元素是其它不包含尺寸的元素，需随便设置一个尺寸才能居中。如果是图片这种自包含尺寸的元素，则无需设置。</p></div><!----><!----></div></div></div>
+    <script src="/assets/js/0.5a91ab3e.js" defer></script><script src="/assets/js/app.85d8a0bf.js" defer></script>
+  </body>
+</html>
