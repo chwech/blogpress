@@ -14,6 +14,13 @@ module.exports = {
         children: [
           '/css/css-horizontal-and-vertical-align-summary.md'
         ]
+      },
+      {
+        title: 'mysql',
+        collapsable: true,
+        children: [
+          '/mysql/与MySQL的零距离接触.md'
+        ]
       }
     ]
   },
