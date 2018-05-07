@@ -9,6 +9,13 @@ module.exports = {
     ],
     sidebar: [
       {
+        title: 'js',
+        collapsable: true,
+        children: [
+          '/js/js面试题.md'
+        ]
+      },
+      {
         title: 'css',
         collapsable: true,
         children: [
