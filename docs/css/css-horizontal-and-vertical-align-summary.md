@@ -29,6 +29,30 @@ demo: [定宽块级元素水平居中](https://codepen.io/chwech/pen/ergbEm)
 }
 ```
 demo: [内联元素水平居中](https://codepen.io/chwech/pen/yjgGvB)
+## 垂直居中
+1. 单行文本垂直居中  
+单行内联元素（包括inline,inline-block,inline-table,inline-flex,etc.）垂直居中，设置内联元素display:block后height和line-height相等或父元素height和line-height相等。（父元素高度确定的单行文本）
+``` css
+// html
+<div class="box1">
+  <span>单行文本垂直居中</span>
+</div>
+<div class="box2">
+  单行文本垂直居中
+</div>
+// css
+div.box1 {
+  height: 100px;
+  line-height: 100px;
+  background-color: green;
+}
+div.box2 {
+  height: 100px;
+  line-height: 100px;
+  background-color: yellow;
+}
+```
+demo: [单行文本垂直居中](https://codepen.io/chwech/pen/OZOYGO)
 ## 水平垂直居中
 1. 绝对定位元素水平垂直居中  
 
