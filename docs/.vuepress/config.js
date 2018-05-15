@@ -28,6 +28,13 @@ module.exports = {
         children: [
           '/mysql/与MySQL的零距离接触.md'
         ]
+      },
+      {
+        title: 'markdown',
+        collapsable: true,
+        children: [
+          '/markdown/markdown语法.md'
+        ]
       }
     ]
   },
